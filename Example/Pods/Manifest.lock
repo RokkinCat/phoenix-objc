@@ -1,12 +1,12 @@
 PODS:
   - Kiwi (2.3.1)
-  - Phoenix-ObjC (0.1.0)
+  - Phoenix-ObjC (0.1.0):
+    - SocketRocket (~> 0.3.1-beta2)
   - SocketRocket (0.3.1-beta2)
 
 DEPENDENCIES:
   - Kiwi
   - Phoenix-ObjC (from `../`)
-  - SocketRocket (~> 0.3.1-beta2)
 
 EXTERNAL SOURCES:
   Phoenix-ObjC:
@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
-  Phoenix-ObjC: 2eec3f06278f8df12e031ae8ab9dc713073eec9e
+  Phoenix-ObjC: 7bff51dd48a900636269a34c965b8f7bd9ca8ead
   SocketRocket: 79a68ae186063c65e1fe6f638b1ae2927aa5f304
 
 COCOAPODS: 0.35.0.rc1

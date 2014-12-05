@@ -18,3 +18,9 @@
 #define COCOAPODS_VERSION_MINOR_Phoenix_ObjC 1
 #define COCOAPODS_VERSION_PATCH_Phoenix_ObjC 0
 
+// SocketRocket
+#define COCOAPODS_POD_AVAILABLE_SocketRocket
+#define COCOAPODS_VERSION_MAJOR_SocketRocket 0
+#define COCOAPODS_VERSION_MINOR_SocketRocket 3
+#define COCOAPODS_VERSION_PATCH_SocketRocket 1
+
