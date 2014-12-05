@@ -5,11 +5,29 @@
 [![License](https://img.shields.io/cocoapods/l/Phoenix-ObjC.svg?style=flat)](http://cocoadocs.org/docsets/Phoenix-ObjC)
 [![Platform](https://img.shields.io/cocoapods/p/Phoenix-ObjC.svg?style=flat)](http://cocoadocs.org/docsets/Phoenix-ObjC)
 
+## Example
+
+```objc
+// Opens connection to Phoenix
+Phoenix *phoenix = [[Phoenix alloc] initWithURL:[NSURL URLWithString:@"ws://10.0.0.12:4000/ws"]];
+[phoenix setDelegate:self];
+[phoenix open];
+
+// Creates, listens on, and joins channel
+PhoenixChannel *channel = [[PhoenixChannel alloc] initWithName:@"channel" topic:@"incoming" message:nil withPhoenix:_phoenix];
+[channel on:@"response:event" handleEventBlock:^(id message) {
+    NSLog(@"Message - %@", message);
+}];
+[channel join];
+```
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+SocketRocket - 0.3.1-beta2
 
 ## Installation
 
@@ -20,7 +38,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-rokkincat, josh@rokkincat.com
+Josh Holtz, josh@rokkincat.com
 
 ## License
 
