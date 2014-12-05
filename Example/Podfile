@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'Phoenix-ObjC', :exclusive => true do
+  pod "Phoenix-ObjC", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "Phoenix-ObjC", :path => "../"
+
+  pod 'Kiwi'
+end
