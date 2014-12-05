@@ -2,6 +2,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'Phoenix-ObjC', :exclusive => true do
   pod "Phoenix-ObjC", :path => "../"
+
+  pod 'SocketRocket', '~> 0.3.1-beta2'
 end
 
 target 'Tests', :exclusive => true do
