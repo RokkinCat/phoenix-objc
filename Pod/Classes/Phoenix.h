@@ -28,7 +28,7 @@
 - (void)phoenixOpened:(Phoenix*)phoenix;
 - (void)phoenixClosed:(Phoenix*)phoenix;
 
-- (void)phoenix:(Phoenix*)phoenix sentEvent:(NSString*)event onTopic:(NSString*)topic onChannel:(NSString*)channel withMessage:(id)message;
+- (void)phoenix:(Phoenix*)phoenix sentEvent:(NSString*)event onTopic:(NSString*)topic withPayload:(id)payload;
 
 - (void)phoenix:(Phoenix*)phoenix failedWithError:(NSError*)error;
 
@@ -38,17 +38,16 @@
 
 typedef void(^HandleEventBlock)(id message);
 
-@property (nonatomic, strong, readonly) NSString *name;
 @property (nonatomic, strong, readonly) NSString *topic;
-@property (nonatomic, strong, readonly) NSDictionary *message;
+@property (nonatomic, strong, readonly) NSDictionary *payload;
 @property (nonatomic, strong, readonly) Phoenix *phoenix;
 
-- (instancetype)initWithName:(NSString*)name topic:(NSString*)topic message:(NSDictionary*)message withPhoenix:(Phoenix*)phoenix;
+- (instancetype)initWithTopic:(NSString*)topic payload:(NSDictionary*)payload withPhoenix:(Phoenix*)phoenix;
 
 - (BOOL)join;
 - (BOOL)leave;
 
-- (void)sendEvent:(NSString*)event message:(id)message;
+- (void)sendEvent:(NSString*)event payload:(id)payload;
 
 - (void)on:(NSString*)event handleEventBlock:(HandleEventBlock)handleEventBlock;
 
