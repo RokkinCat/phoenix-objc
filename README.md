@@ -9,16 +9,16 @@
 
 ```objc
 // Opens connection to Phoenix
-Phoenix *phoenix = [[Phoenix alloc] initWithURL:[NSURL URLWithString:@"ws://10.0.0.12:4000/ws"]];
-[phoenix setDelegate:self];
-[phoenix open];
+_phoenix = [[Phoenix alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:4000/ws"]];
+[_phoenix setDelegate:self];
+[_phoenix open];
 
 // Creates, listens on, and joins channel
-PhoenixChannel *channel = [[PhoenixChannel alloc] initWithName:@"channel" topic:@"incoming" message:nil withPhoenix:_phoenix];
-[channel on:@"response:event" handleEventBlock:^(id message) {
+_channel = [[PhoenixChannel alloc] initWithTopic:@"channel:incoming" payload:nil withPhoenix:_phoenix];
+[_channel on:@"response:event" handleEventBlock:^(id message) {
     NSLog(@"Message - %@", message);
 }];
-[channel join];
+[_channel join];
 ```
 
 ## Usage
