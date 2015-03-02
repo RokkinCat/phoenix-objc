@@ -33,7 +33,7 @@
     NSURL *url = [NSURL URLWithString:@"ws://localhost:4000/ws"];
     
     // Opens connection to Phoenix
-    _phoenix = [[Phoenix alloc] initWithURL:[NSURL URLWithString:@"ws://10.0.0.7:4000/ws"]];
+    _phoenix = [[Phoenix alloc] initWithURL:url];
     [_phoenix setDelegate:self];
     [_phoenix open];
     
@@ -77,7 +77,7 @@
     }
     
     _count++;
-    [_channel sendEvent:@"event" payload:@{ @"value" : @"heyyyyy" }];
+    [_channel sendEvent:@"response:event" payload:@{ @"value" : @"heyyyyy" }];
 }
 
 @end

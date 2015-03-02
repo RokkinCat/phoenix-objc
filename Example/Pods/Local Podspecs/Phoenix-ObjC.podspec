@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Josh Holtz" => "josh@rokkincat.com" }
   s.source           = { :git => "https://github.com/RokkinCat/phoenix-objc.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
