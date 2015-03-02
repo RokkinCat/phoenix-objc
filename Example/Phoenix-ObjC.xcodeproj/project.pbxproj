@@ -116,6 +116,19 @@ fi
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
+		<key>5127D88670595BD78616354D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>513AD9F48FC8E9A5F9E0AF01</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -260,6 +273,7 @@ fi
 				<string>6003F592195388D20070C39A</string>
 				<string>6003F58E195388D20070C39A</string>
 				<string>D60D4720813C22CB425BE10C</string>
+				<string>CAE6ECE7997C9A2CEC3CB286</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -346,6 +360,7 @@ fi
 				<string>6003F5AF195388D20070C39A</string>
 				<string>B8E4A1AC9F2F34FEBE7734EB</string>
 				<string>401EFF6426D4E68C2B044C21</string>
+				<string>5127D88670595BD78616354D</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1303,6 +1318,13 @@ fi
 			<string>Pods/Target Support Files/Pods-Phoenix-ObjC/Pods-Phoenix-ObjC.release.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAE6ECE7997C9A2CEC3CB286</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5127D88670595BD78616354D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>D60D4720813C22CB425BE10C</key>
 		<dict>
