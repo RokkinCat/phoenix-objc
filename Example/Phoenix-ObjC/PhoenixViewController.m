@@ -22,8 +22,15 @@
 
 @implementation PhoenixViewController
 
-- (void)viewDidLoad {
+//30s
+//sendHeartbeat: ->
+//@send(topic: "phoenix:conn", event: "heartbeat", payload: {})
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    NSURL *url = [NSURL URLWithString:@"ws://localhost:4000/ws"];
     
     // Opens connection to Phoenix
     _phoenix = [[Phoenix alloc] initWithURL:[NSURL URLWithString:@"ws://10.0.0.7:4000/ws"]];
@@ -31,7 +38,7 @@
     [_phoenix open];
     
     // Creates, listens on, and joins channel
-    _channel = [[PhoenixChannel alloc] initWithName:@"channel" topic:@"incoming" message:nil withPhoenix:_phoenix];
+    _channel = [[PhoenixChannel alloc] initWithTopic:@"channel:incoming" payload:nil withPhoenix:_phoenix];
     [_channel on:@"response:event" handleEventBlock:^(id message) {
         NSLog(@"Message - %@", message);
     }];
@@ -55,8 +62,8 @@
     NSLog(@"Phoenix failed with error - %@", error);
 }
 
-- (void)phoenix:(Phoenix *)phoenix sentEvent:(NSString *)event onTopic:(NSString *)topic onChannel:(NSString *)channel withMessage:(id)message {
-    NSLog(@"Phoenix sent event(%@) on topic(%@) on channel(%@) with message - %@", event, topic, channel, message);
+- (void)phoenix:(Phoenix *)phoenix sentEvent:(NSString *)event onTopic:(NSString *)topic withPayload:(id)payload {
+    NSLog(@"Phoenix sent event(%@) on topic(%@) with payload - %@", event, topic, payload);
 }
 
 
@@ -70,7 +77,7 @@
     }
     
     _count++;
-    [_channel sendEvent:@"event" message:@{ @"value" : @"heyyyyy" }];
+    [_channel sendEvent:@"event" payload:@{ @"value" : @"heyyyyy" }];
 }
 
 @end
