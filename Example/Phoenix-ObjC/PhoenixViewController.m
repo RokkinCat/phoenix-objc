@@ -22,18 +22,11 @@
 
 @implementation PhoenixViewController
 
-//30s
-//sendHeartbeat: ->
-//@send(channel: "phoenix", topic: "conn", event: "heartbeat", message: {})
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString:@"ws://10.0.0.12:4000/ws"];
-    
     // Opens connection to Phoenix
-    _phoenix = [[Phoenix alloc] initWithURL:url];
+    _phoenix = [[Phoenix alloc] initWithURL:[NSURL URLWithString:@"ws://10.0.0.7:4000/ws"]];
     [_phoenix setDelegate:self];
     [_phoenix open];
     
@@ -44,8 +37,8 @@
     }];
     [_channel join];
     
-//    _count = 0;
-//    _timer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(testSend) userInfo:nil repeats:YES];
+    _count = 0;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(testSend) userInfo:nil repeats:YES];
 }
 
 #pragma mark - PhoenixDelegate

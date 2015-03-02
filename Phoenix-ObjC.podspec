@@ -10,19 +10,14 @@
 Pod::Spec.new do |s|
   s.name             = "Phoenix-ObjC"
   s.version          = "0.1.0"
-  s.summary          = "A short description of Phoenix-ObjC."
+  s.summary          = "Objective-C client for Phoenix."
   s.description      = <<-DESC
-                       An optional longer description of Phoenix-ObjC
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Objective-C client for Phoenix Framework
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/Phoenix-ObjC"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/RokkinCat/phoenix-objc"
   s.license          = 'MIT'
-  s.author           = { "rokkincat" => "josh@rokkincat.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/Phoenix-ObjC.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Josh Holtz" => "josh@rokkincat.com" }
+  s.source           = { :git => "https://github.com/RokkinCat/phoenix-objc.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -32,7 +27,5 @@ Pod::Spec.new do |s|
     'Phoenix-ObjC' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'SocketRocket', '~> 0.3.1-beta2'
 end
