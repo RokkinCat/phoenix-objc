@@ -70,7 +70,7 @@
     _channels[channel.topic] = channel;
 
     // Joins channel
-    [self send:channel.topic event:@"join" payload:nil];
+    [self send:channel.topic event:@"join" payload:channel.payload];
 
     return YES;
 }
