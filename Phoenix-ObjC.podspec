@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Phoenix-ObjC"
-  s.version          = "0.2.1"
+  s.version          = "0.2.2"
   s.summary          = "Objective-C client for Phoenix."
   s.description      = <<-DESC
                        Objective-C client for Phoenix Framework
