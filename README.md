@@ -27,7 +27,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-SocketRocket - 0.3.1-beta2
+SocketRocket - 0.4.x
 
 ## Installation
 
