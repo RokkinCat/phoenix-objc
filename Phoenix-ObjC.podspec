@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
     'Phoenix-ObjC' => ['Pod/Assets/*.png']
   }
 
-  s.dependency 'SocketRocket', '~> 0.3.1-beta2'
+  s.dependency 'SocketRocket', '~> 0.4.0'
 end
